@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAP-Prüfungen Langgymnasium</title>
+    <link rel="stylesheet" href="lib/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="lib/fontawesome/css/regular.min.css">
+    <link rel="stylesheet" href="lib/style.css">
+    <script src="lib/jszip.min.js"></script>
+    <script
+      id="locizify"
+      projectid="b1e0459c-e32f-4e20-8c4c-e2d541719050"
+      apikey="6527c25e-9a88-4de5-8f56-3f92179bd4d5"
+      src="lib/locizify.min.js"
+      autopilot="true"
+    ></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ZAP-Prüfungen Langgymnasium</h1>
+            <p id="range-years" i18next-key="heading" i18next-options='{"fromYear": "2007", "toYear": "2024"}'>Alle Prüfungen auf einen Blick – von 2007 bis 2024.</p>
+            <a href="#pruefungen" class="cta-btn"><i class="fas fa-arrow-down"></i> <span>Zu den Prüfungen</span></a>
+            <span class="dwn-btn download-link" id="downloadAll"><i class="fas fa-file-download"></i> <span>Alles herunterladen</span></span>
+            <h2 style="color: #EAECEF"><i class="fas fa-graduation-cap"></i> <span id="learn-year" i18next-key="learn" i18next-options='{"year": "2025"}'>Lerne für die Prüfung 2025, indem du die alten Prüfungen durchmachst!</span></h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="pruefungen" class="grid-container">
+            <h2>Prüfungen nach Jahr</h2>
+            <div class="grid" id="pruefungs-grid">
+            </div>
+        </section>
+
+        <section id="material-hilfsmittel" class="material-section">
+            <h2>Material und Hilfsmittel</h2>
+            <p>Kandidatinnen und Kandidaten sollen folgendes Material benutzen:</p>
+        
+            <div class="material-list">
+                <h3>Erlaubt:</h3>
+                <ul>
+                    <li><i class="fas fa-id-card"></i> <span>Amtlicher Ausweis (Pass, Identitätskarte)</span></li>
+                    <li><i class="fas fa-pen"></i> <span>Schreibmaterial: Füllfeder, Kugelschreiber oder Filzstift (Blau/Schwarz), Tipp-Ex oder Tintenkiller</span></li>
+                    <li><i class="fas fa-pencil-ruler"></i> Lineal</li>
+                    <li><i class="fas fa-book"></i> <span>Wörterbuch (für Deutsch: Duden oder Primarschul-Wörterbuch)</span></li>
+                    <li><i class="fas fa-pencil-alt"></i> <span>Mathematik: Bleistift, Radiergummi, Geodreieck und Zirkel</span></li>
+                    <li><i class="fas fa-language"></i> <span>Zweisprachiges Wörterbuch für Mathematik (nur bei Anmeldung vermerkt)</span></li>
+                </ul>
+            </div>
+        
+            <div class="material-list">
+                <h3>Nicht erlaubt:</h3>
+                <ul>
+                    <li><i class="fas fa-ban"></i> <span>Radierbare Stifte (außer Bleistift, wo vorgesehen)</span></li>
+                    <li><i class="fas fa-file"></i> <span>Eigenes Papier (Papier wird bereitgestellt)</span></li>
+                    <li><i class="fas fa-mobile-alt"></i> <span>Digitale Geräte (Mobiltelefone, Smartwatches, etc.)</span></li>
+                </ul>
+            </div>
+        
+            <p class="note">Hinweis: Digitale Geräte müssen vor der Prüfung abgegeben werden. Eine analoge Uhr wird zur Zeitanzeige empfohlen.</p>
+        </section>
+
+        <section class="info">
+            <h2>Hinweise & weitere Informationen</h2>
+            <p style="color: red;">Diese Webseite ist eine private Initiative und nicht offiziell mit dem Kanton Zürich verbunden.</p>
+            <p><i class="fab fa-github"></i> <span merge>Feedback & Inputs können auf <a target="_blank" href="https://github.com/adrai/zap-archiv">Github</a> in Form von Issues eingebracht werden.</span></p>
+            <p merge>Weiterführende Informationen können auf der <a href="https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html" target="_blank">offiziellen Webseite des Kantons</a> gefunden werden.</p>
+        </section>
+    </main>
+
+    <footer>
+      <p>
+        <span>internationalisiert mit</span> <a href="https://i18next.com"><img src="img/i18next_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://i18next.com"></a> <span translated>|</span> <span>lokalisiert mit Hilfe von </span><a href="https://locize.com"><img src="img/locize_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://locize.com"></a> <span translated>|</span> <a href="?lng=de" translated>🇨🇭 Deutsch</a> <a href="?lng=it" translated>🇮🇹 Italiano</a> <a href="?lng=fr" translated>🇫🇷 Français</a> <a href="?lng=en" translated>🏴󠁧󠁢󠁥󠁮󠁧󠁿 English</a>
+      </p>
+
+      <p style="font-size: 0.8rem;"><span translated>&copy;</span> <span id="footer-year" translated>2025</span> <span translated>|</span> <span merge>Diese Webseite ist auf <a href="https://pages.github.com/" target="_blank">Github Pages</a> gehosted. Informationen zum Datenschutz sind <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">hier</a> zu finden.</span></p>
+    </footer>
+
+    <script src="lib/main.js"></script>
+</body>
+</html>

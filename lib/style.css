@@ -1,0 +1,211 @@
+/* Allgemeine Stile */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #F5F5F5;
+  color: #333;
+}
+
+h1 {
+  font-weight: 600;
+  color: #a6b7c7;
+}
+
+h2, h3 {
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #4A90E2;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FF7A59;
+}
+
+/* Hero-Bereich */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #4A90E2, #1D3557);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: #FF7A59;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #E64A19;
+}
+
+.dwn-btn {
+  background-color: #59ffbd;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dwn-btn:hover {
+  background-color: #48ffbd;
+}
+
+/* Grid-Bereich */
+.grid-container {
+  padding: 40px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #4A90E2;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+}
+
+.download-link {
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.download-link:hover {
+  color: #FF7A59;
+}
+
+.material-section {
+  background-color: #EAECEF;
+  padding: 40px 20px;
+  border-top: 3px solid #4A90E2;
+  margin-top: 20px;
+}
+
+.material-section h2 {
+  font-size: 2rem;
+  color: #4A90E2;
+  margin-bottom: 20px;
+}
+
+.material-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.material-list {
+  margin-bottom: 20px;
+}
+
+.material-list h3 {
+  font-size: 1.5rem;
+  color: #FF7A59;
+  margin-bottom: 10px;
+}
+
+.material-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.material-list ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.material-list ul li i {
+  color: #4A90E2;
+  font-size: 1.2rem;
+}
+
+.note {
+  font-style: italic;
+  color: #555;
+}
+
+/* Info-Bereich */
+.info {
+  padding: 30px 20px;
+  background-color: #EAECEF;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background: #1D3557;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+footer a {
+  color: #FF7A59;
+}
