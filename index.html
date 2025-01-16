@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="lib/fontawesome/css/regular.min.css">
     <link rel="stylesheet" href="lib/style.css">
     <script src="lib/jszip.min.js"></script>
-    <script
-        id="locizify"
-        projectid="b1e0459c-e32f-4e20-8c4c-e2d541719050"
-        src="lib/locizify.min.js"
-        autopilot="true"
-    ></script>
+    <script src="/lib/i18nextify.min.js" id="i18nextify" fallbacklng="de" supportedlngs="de,en,it,fr" loadpath="locales/{{lng}}/{{ns}}.json" load="languageOnly"></script>
 </head>
 <body>
     <header class="hero">
@@ -72,11 +67,11 @@
     </main>
 
     <footer>
-      <p>
-        <span>internationalisiert mit</span> <a href="https://i18next.com"><img src="img/i18next_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://i18next.com"></a> <span translated>|</span> <span>lokalisiert mit Hilfe von </span><a href="https://locize.com"><img src="img/locize_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://locize.com"></a> <span translated>|</span> <a href="?lng=de" translated>🇨🇭 Deutsch</a> <a href="?lng=it" translated>🇮🇹 Italiano</a> <a href="?lng=fr" translated>🇫🇷 Français</a> <a href="?lng=en" translated>🏴󠁧󠁢󠁥󠁮󠁧󠁿 English</a>
-      </p>
+        <p>
+            <span>internationalisiert mit</span> <a href="https://i18next.com" translated><img src="img/i18next_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://i18next.com"></a> <span translated>|</span> <span>lokalisiert mit Hilfe von </span><a href="https://locize.com" translated><img src="img/locize_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://locize.com"></a> <span translated>|</span> <a href="?lng=de" style="display: inline-block;" translated>🇨🇭 Deutsch</a> <a href="?lng=it" style="display: inline-block;" translated>🇮🇹 Italiano</a> <a href="?lng=fr" style="display: inline-block;" translated>🇫🇷 Français</a> <a href="?lng=en" style="display: inline-block;" translated>🏴󠁧󠁢󠁥󠁮󠁧󠁿 English</a>
+        </p>
 
-      <p style="font-size: 0.8rem;"><span translated>&copy;</span> <span id="footer-year" translated>2025</span> <span translated>|</span> <span merge>Diese Webseite ist auf <a href="https://pages.github.com/" target="_blank">Github Pages</a> gehosted. Informationen zum Datenschutz sind <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">hier</a> zu finden.</span></p>
+        <p style="font-size: 0.8rem;"><span translated>&copy;</span> <span id="footer-year" translated>2025</span> <span translated>|</span> <span merge>Diese Webseite ist auf <a href="https://pages.github.com/" target="_blank">Github Pages</a> gehosted. Informationen zum Datenschutz sind <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">hier</a> zu finden.</span></p>
     </footer>
 
     <script src="lib/main.js"></script>
