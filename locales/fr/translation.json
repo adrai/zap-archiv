@@ -33,5 +33,16 @@
   "heading": "Tous les tests en un coup d'œil – de {{fromYear}} jusqu'à {{toYear}}.",
   "internationalisiert mit": "internationalisé avec",
   "learn": "Étudier pour l'examen {{year}}, en passant par les épreuves anciennes!",
-  "lokalisiert mit Hilfe von": "localisé avec l'aide de"
+  "lokalisiert mit Hilfe von": "localisé avec l'aide de",
+  "Beispiel Notenskala": "Exemple d'échelle de notation",
+  "Deutsch": "Allemand",
+  "Punkte von": "Points de",
+  "Punkte bis": "Points en hausse",
+  "Note": "Note",
+  "Noten-Rechner für Deutsch": "Calculateur de notes pour l'allemand",
+  "Punkte": "Points",
+  "Punkte:": "Points:",
+  "Mathematik": "Mathématiques",
+  "Note berechnen": "Calculer la note",
+  "Noten-Rechner für Mathematik": "Calculateur de notes pour les mathématiques"
 }

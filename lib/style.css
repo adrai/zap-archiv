@@ -191,6 +191,106 @@ a:hover {
   color: #555;
 }
 
+.notenskala-section {
+  background-color: #FFFFFF;
+  padding: 40px 20px;
+  border-top: 3px solid #4A90E2;
+  margin-top: 20px;
+}
+
+.notenskala-section h2 {
+  font-size: 2rem;
+  color: #4A90E2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Container for the titles and tables */
+.notenskala-tables {
+  display: flex;
+  gap: 40px; /* Space between the tables */
+  justify-content: center; /* Align tables in the center horizontally */
+  flex-wrap: wrap; /* Allow tables to stack on smaller screens */
+  margin: 20px auto; /* Space around the table section */
+  padding: 10px;
+  text-align: center; /* Centers text in each table block */
+}
+
+/* Individual table wrapper */
+.notenskala-tables > div {
+  max-width: 300px; /* Prevent the tables from becoming too wide */
+}
+
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 300px; /* Optional: Keeps the table compact */
+  margin: 10px auto; /* Centers the table within its block */
+}
+
+table th, table td {
+  border: 1px solid #ddd; /* Borders for table cells */
+  padding: 8px;
+  text-align: center; /* Centers text in cells */
+}
+
+table th {
+  background-color: #4A90E2; /* Header background color */
+  color: white; /* Header text color */
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light gray background for alternate rows */
+}
+
+table tr:hover {
+  background-color: #f1f1f1; /* Slightly darker background on hover */
+}
+
+/* Table titles styling */
+.notenskala-tables h3 {
+  font-weight: bold;
+  color: #2C3E50; /* Darker title color for better readability */
+  margin-bottom: 10px; /* Adds spacing between the title and table */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .notenskala-tables {
+    flex-direction: column; /* Stacks tables vertically on smaller screens */
+    gap: 20px; /* Reduces space between tables */
+  }
+}
+
+/* Collapsible Table Styling */
+.collapsible-table {
+  display: none; /* Initially hide the table */
+  transition: all 0.3s ease; /* Smooth visibility transition */
+}
+
+.notenskala-tables h3 {
+  cursor: pointer; /* Pointer cursor for interactivity */
+  user-select: none; /* Prevent text selection */
+  font-weight: bold;
+  color: #2C3E50;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notenskala-tables h3::after {
+  content: "▼"; /* Default arrow icon */
+  font-size: 0.8rem;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.notenskala-tables h3.open::after {
+  transform: rotate(180deg); /* Rotate arrow when open */
+}
+
 /* Info-Bereich */
 .info {
   padding: 30px 20px;
@@ -208,4 +308,49 @@ footer {
 
 footer a {
   color: #FF7A59;
+}
+
+.calculator {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.calculator h3 {
+  margin-bottom: 10px;
+  color: #2C3E50;
+}
+
+.calculator label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.calculator input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.calculator button {
+  margin-left: 10px;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculator button:hover {
+  background-color: #357ABD;
+}
+
+.calculatedNote {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #2C3E50;
 }

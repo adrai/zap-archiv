@@ -33,5 +33,16 @@
   "heading": "All exams at a glance – from {{fromYear}} until {{toYear}}.",
   "internationalisiert mit": "internationalized with",
   "learn": "Study for the {{year}} exam by going through the old exams!",
-  "lokalisiert mit Hilfe von": "localized with the help of"
+  "lokalisiert mit Hilfe von": "localized with the help of",
+  "Beispiel Notenskala": "Example grading scale",
+  "Deutsch": "German",
+  "Punkte von": "Points from",
+  "Punkte bis": "Points up",
+  "Note": "Grade",
+  "Noten-Rechner für Deutsch": "Grade calculator for german",
+  "Punkte": "Points",
+  "Punkte:": "Points:",
+  "Mathematik": "Mathematics",
+  "Note berechnen": "Calculate grade",
+  "Noten-Rechner für Mathematik": "Grade calculator for mathematics"
 }

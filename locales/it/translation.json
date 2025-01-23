@@ -33,5 +33,16 @@
   "heading": "Tutti i test a colpo d'occhio – dal {{fromYear}} fino al {{toYear}}.",
   "internationalisiert mit": "internazionalizzato con",
   "learn": "Studiare per l'esame {{year}}, superando i vecchi esami!",
-  "lokalisiert mit Hilfe von": "localizzato con l'aiuto di"
+  "lokalisiert mit Hilfe von": "localizzato con l'aiuto di",
+  "Beispiel Notenskala": "Esempio di scala di valutazione",
+  "Deutsch": "Tedesco",
+  "Punkte von": "Punti da",
+  "Punkte bis": "Punta in alto",
+  "Note": "Voto",
+  "Noten-Rechner für Deutsch": "Calcolatore dei voti per il tedesco",
+  "Punkte": "Punti",
+  "Punkte:": "Punti:",
+  "Mathematik": "Matematica",
+  "Note berechnen": "Calcola il voto",
+  "Noten-Rechner für Mathematik": "Calcolatore dei voti per la matematica"
 }

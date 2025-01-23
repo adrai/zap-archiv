@@ -33,5 +33,16 @@
   "heading": "Alle Prüfungen auf einen Blick – von {{fromYear}} bis {{toYear}}.",
   "internationalisiert mit": "internationalisiert mit",
   "learn": "Lerne für die Prüfung {{year}}, indem du die alten Prüfungen durchmachst!",
-  "lokalisiert mit Hilfe von": "lokalisiert mit Hilfe von"
+  "lokalisiert mit Hilfe von": "lokalisiert mit Hilfe von",
+  "Beispiel Notenskala": "Beispiel Notenskala",
+  "Deutsch": "Deutsch",
+  "Punkte von": "Punkte von",
+  "Punkte bis": "Punkte bis",
+  "Note": "Note",
+  "Noten-Rechner für Deutsch": "Noten-Rechner für Deutsch",
+  "Punkte": "Punkte",
+  "Punkte:": "Punkte:",
+  "Mathematik": "Mathematik",
+  "Note berechnen": "Note berechnen",
+  "Noten-Rechner für Mathematik": "Noten-Rechner für Mathematik"
 }
