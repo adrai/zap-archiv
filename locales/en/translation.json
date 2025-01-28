@@ -39,10 +39,13 @@
   "Punkte von": "Points from",
   "Punkte bis": "Points up",
   "Note": "Grade",
+  "Noten-Rechner": "Grade calculator",
   "Noten-Rechner für Deutsch": "Grade calculator for german",
   "Punkte": "Points",
   "Punkte:": "Points:",
   "Mathematik": "Mathematics",
   "Note berechnen": "Calculate grade",
-  "Noten-Rechner für Mathematik": "Grade calculator for mathematics"
+  "Noten-Rechner für Mathematik": "Grade calculator for mathematics",
+  "Generischer Noten-Rechner": "Generic Grade calculator",
+  "Maximale Punktzahl:": "Maximum score:"
 }

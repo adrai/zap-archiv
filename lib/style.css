@@ -84,6 +84,22 @@ a:hover {
   background-color: #48ffbd;
 }
 
+.other-infos-btn {
+  background-color: #b4ff59;
+  color: #4A90E2;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.other-infos-btn:hover {
+  background-color: #48ffbd;
+}
+
 /* Grid-Bereich */
 .grid-container {
   padding: 40px 20px;
@@ -316,6 +332,7 @@ footer a {
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: end;
 }
 
 .calculator h3 {

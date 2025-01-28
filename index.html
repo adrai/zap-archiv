@@ -21,6 +21,10 @@
             <a href="#pruefungen" class="cta-btn"><i class="fas fa-arrow-down"></i> <span>Zu den Prüfungen</span></a>
             <span class="dwn-btn download-link" id="downloadAll"><i class="fas fa-file-download"></i> <span>Alles herunterladen</span></span>
             <h2 style="color: #EAECEF"><i class="fas fa-graduation-cap"></i> <span id="learn-year" i18next-key="learn" i18next-options='{"year": "2025"}'>Lerne für die Prüfung 2025, indem du die alten Prüfungen durchmachst!</span></h2>
+
+            <a href="#material-hilfsmittel" class="other-infos-btn"><i class="fas fa-book"></i> <span>Material und Hilfsmittel</span></a>
+            <a href="#beispiel-notenskala" class="other-infos-btn"><i class="fas fa-chart-simple"></i> <span>Beispiel Notenskala</span></a>
+            <a href="#general-calculator" class="other-infos-btn"><i class="fas fa-calculator"></i> <span>Noten-Rechner</span></a>
         </div>
     </header>
 
@@ -99,11 +103,12 @@
                             <tr><td>38</td><td>46</td><td>6</td></tr>
                         </tbody>
                     </table>
-                    <div class="calculator">
+                    <div id="german-calculator" class="calculator">
                         <h4>Noten-Rechner für Deutsch</h4>
                         <label for="punkteInput.deutsch">Punkte:</label>
                         <input type="number" id="punkteInput.deutsch" min="0" max="46" step="1" />
                         <button onclick="calculateNote('deutsch')">Note berechnen</button>
+                        <hr />
                         <p class="calculatedNote" id="calculatedNote.deutsch"></p>
                     </div>
                 </div>
@@ -141,13 +146,26 @@
                             <tr><td>36</td><td>36</td><td>6</td></tr>
                         </tbody>
                     </table>
-                    <div class="calculator">
+                    <div id="mathematics-calculator" class="calculator">
                         <h4>Noten-Rechner für Mathematik</h4>
                         <label for="punkteInput.mathematik">Punkte:</label>
                         <input type="number" id="punkteInput.mathematik" min="0" max="36" step="1" />
                         <button onclick="calculateNote('mathematik')">Note berechnen</button>
+                        <hr />
                         <p class="calculatedNote" id="calculatedNote.mathematik"></p>
                     </div>
+                </div>
+
+                <div id="general-calculator" class="calculator">
+                    <h4>Generischer Noten-Rechner</h4>
+                    <label for="punkteInput.generell">Punkte:</label>
+                    <input type="number" id="punkteInput.generell" min="0" max="100" step="1" />
+                    <hr />
+                    <label for="punkteInput.generellMax">Maximale Punktzahl:</label>
+                    <input type="number" id="punkteInput.generellMax" min="1" max="100" step="1" placeholder="36" />
+                    <button onclick="calculateNoteGenerell()">Note berechnen</button>
+                    <hr />
+                    <p class="calculatedNote" id="calculatedNote.generell"></p>
                 </div>
             </div>
         </section>
