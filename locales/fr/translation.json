@@ -51,5 +51,21 @@
   "(Sprachprüfung)": "(test de langue)",
   "(Aufsatz)": "(dissertation)",
   "beispielhaft anhand": "comme exemplaire basé sur",
-  "dieser Beurteilungskriterien": "ces critères"
+  "dieser Beurteilungskriterien": "ces critères",
+  "Wie wird die Gesamtnote berechnet?": "Comment la note globale est-elle calculée?",
+  "Prüfungsnote:": "Note d'examen:",
+  "Zeugnisnote:": "Certificat:",
+  "Durchschnitt": "Moyenne",
+  "Mathematik Durchschnitt:": "Moyenne en mathématiques:",
+  "Aufsatz Note:": "Note de la dissertation:",
+  "Sprachprüfung Note:": "Note de test de langue:",
+  "Deutsch Prüfungen Durchschnitt:": "Moyenne des examens allemands:",
+  "Deutsch Durchschnitt:": "Moyenne allemande:",
+  "Berechnen": "Calculer",
+  "Entscheidung - Durchschnitt": "Décision - moyenne",
+  "Ergebnis:": "Résultat:",
+  "Für weitere Informationen bitte die <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" target=\"_blank\">offizielle Webseite des Kantons</a> besuchen.": "Pour plus d'informations, veuillez visitez <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" target=\"_blank\">Site officiel du canton</a>.",
+  "bestanden": "Félicitations, tu êtes passé!",
+  "nichtBestanden": "Malheureusement, tu n'a pas réussi.",
+  "Gesamtnote": "Note globale"
 }

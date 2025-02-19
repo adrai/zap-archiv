@@ -51,5 +51,21 @@
   "(Sprachprüfung)": "(test di lingua)",
   "(Aufsatz)": "(saggio)",
   "beispielhaft anhand": "come esempio basato su",
-  "dieser Beurteilungskriterien": "questi criteri"
+  "dieser Beurteilungskriterien": "questi criteri",
+  "Wie wird die Gesamtnote berechnet?": "Come viene calcolato il voto complessivo?",
+  "Prüfungsnote:": "Voto di esame:",
+  "Zeugnisnote:": "Voto pagella:",
+  "Durchschnitt": "Media",
+  "Mathematik Durchschnitt:": "Matematica media:",
+  "Aufsatz Note:": "Voto del saggio:",
+  "Sprachprüfung Note:": "Voto test di lingua:",
+  "Deutsch Prüfungen Durchschnitt:": "Esami tedeschi in media:",
+  "Deutsch Durchschnitt:": "Tedesco media:",
+  "Berechnen": "Calcolare",
+  "Entscheidung - Durchschnitt": "Decisione: media",
+  "Ergebnis:": "Risultato:",
+  "Für weitere Informationen bitte die <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" target=\"_blank\">offizielle Webseite des Kantons</a> besuchen.": "Per ulteriori informazioni, per favore visita <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" target=\"_blank\">Sito ufficiale del cantone</a>.",
+  "bestanden": "Congratulazioni, sei passato!",
+  "nichtBestanden": "Purtroppo non sei passato.",
+  "Gesamtnote": "Voto complessivo"
 }

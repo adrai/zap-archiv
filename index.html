@@ -25,6 +25,7 @@
             <a href="#material-hilfsmittel" class="other-infos-btn"><i class="fas fa-book"></i> <span>Material und Hilfsmittel</span></a>
             <a href="#beispiel-notenskala" class="other-infos-btn"><i class="fas fa-chart-simple"></i> <span>Beispiel Notenskala</span></a>
             <a href="#general-calculator" class="other-infos-btn"><i class="fas fa-calculator"></i> <span>Noten-Rechner</span></a>
+            <a href="#gesamtnote" class="other-infos-btn"><i class="fas fa-user-graduate"></i> <span>Gesamtnote</span></a>
         </div>
     </header>
 
@@ -172,7 +173,7 @@
                         <input type="number" id="punkteInput.generell" min="0" max="100" step="1" />
                         <hr />
                         <label for="punkteInput.generellMax" translated>Maximale Punktzahl:</label>
-                        <input type="number" id="punkteInput.generellMax" min="1" max="100" step="1" placeholder="36" />
+                        <input type="number" id="punkteInput.generellMax" min="1" max="100" step="1" placeholder="36" translated/>
                         <br />
                         <button style="margin-top: 5px;" onclick="calculateNoteGenerell()">Note berechnen</button>
                         <hr />
@@ -180,6 +181,48 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section class="gesamtnote" id="gesamtnote">
+            <h2>Wie wird die Gesamtnote berechnet?</h2>
+
+            <div class="gesamtnote-container">                
+                <div class="row">
+                    <div class="column">
+                        <h3>Mathematik</h3>
+                        <div class="input-group"><span translated>M1: </span>Prüfungsnote: <input type="number" id="mathTest" step="0.1" value="4"></div>
+                        <div class="input-group"><span translated>M2: </span>Zeugnisnote: <input type="number" id="mathReport" step="0.1" value="5.5"></div>
+                        <p class="arrow"><span translated>⬇️ M3: </span>Durchschnitt <code style="font-size: small;" translated>(M1 + M2) / 2</code><span translated> ⬇️</span></p>
+                        <p class="result">Mathematik Durchschnitt: <span id="mathAvg"><span translated>-</span></span></p>
+                    </div>
+                    <div class="column">
+                        <h3>Deutsch</h3>
+                        <div class="input-group"><span translated>D1: </span>Aufsatz Note: <input type="number" id="germanEssay" step="0.1" value="4"></div>
+                        <div class="input-group"><span translated>D2: </span>Sprachprüfung Note: <input type="number" id="germanTest" step="0.1" value="4"></div>
+                        <p class="arrow"><span translated>⬇️ D3: </span>Durchschnitt <code style="font-size: small;" translated>(D1 + D2) / 2</code><span translated> ⬇️</span></p>
+                        <p class="result">Deutsch Prüfungen Durchschnitt: <span id="germanAvgP"><span translated>-</span></span></p>
+                        <div class="input-group"><span translated>D4: </span>Zeugnisnote: <input type="number" id="germanReport" step="0.1" value="5.5"></div>
+                        <p class="arrow"><span translated>⬇️ D5: </span>Durchschnitt <code style="font-size: small;" translated>(D3 + D4) / 2</code><span translated> ⬇️</span></p>
+                        <p class="result">Deutsch Durchschnitt: <span id="germanAvg"><span translated>-</span></span></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column calculator" style="text-align: center;">
+                        <button onclick="calculateGesamtNote()" style=" font-size: larger;">Berechnen</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="column" style="text-align: center;">
+                        <p class="arrow"><span translated>⬇️ </span>Entscheidung - Durchschnitt <code style="font-size: small;" translated>(M3 + D5) / 2</code><span translated> ⬇️</span></p>
+                        <p class="result">Prüfungsnote: <span id="finalGrade"><span translated>-</span></span></p>
+                        <p class="result">Ergebnis: <span id="result"><span translated>-</span></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <p merge>Für weitere Informationen bitte die <a href="https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380" target="_blank">offizielle Webseite des Kantons</a> besuchen.</p>
         </section>
 
         <section class="info">

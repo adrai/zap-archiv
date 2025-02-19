@@ -307,6 +307,11 @@ table tr:hover {
   transform: rotate(180deg); /* Rotate arrow when open */
 }
 
+/* Gesamtnoten-Bereich */
+.gesamtnoten {
+  padding: 30px 20px;
+}
+
 /* Info-Bereich */
 .info {
   padding: 30px 20px;
@@ -370,4 +375,42 @@ footer a {
   margin-top: 15px;
   font-weight: bold;
   color: #2C3E50;
+}
+
+.gesamtnote-container {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+.column {
+  width: 45%;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+}
+.input-group {
+  margin: 10px 0;
+}
+input {
+  width: 80px;
+  padding: 5px;
+  margin-left: 10px;
+  text-align: center;
+}
+.arrow {
+  font-size: 20px;
+  color: #555;
+}
+.result {
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px;
+  background: #e6e6e6;
+  border-radius: 5px;
 }

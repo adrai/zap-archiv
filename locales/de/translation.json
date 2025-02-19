@@ -51,5 +51,21 @@
   "(Sprachprüfung)": "(Sprachprüfung)",
   "(Aufsatz)": "(Aufsatz)",
   "beispielhaft anhand": "beispielhaft anhand",
-  "dieser Beurteilungskriterien": "dieser Beurteilungskriterien"
+  "dieser Beurteilungskriterien": "dieser Beurteilungskriterien",
+  "Wie wird die Gesamtnote berechnet?": "Wie wird die Gesamtnote berechnet?",
+  "Prüfungsnote:": "Prüfungsnote:",
+  "Zeugnisnote:": "Zeugnisnote:",
+  "Durchschnitt": "Durchschnitt",
+  "Mathematik Durchschnitt:": "Mathematik Durchschnitt:",
+  "Aufsatz Note:": "Aufsatz Note:",
+  "Sprachprüfung Note:": "Sprachprüfung Note:",
+  "Deutsch Prüfungen Durchschnitt:": "Deutsch Prüfungen Durchschnitt:",
+  "Deutsch Durchschnitt:": "Deutsch Durchschnitt:",
+  "Berechnen": "Berechnen",
+  "Entscheidung - Durchschnitt": "Entscheidung - Durchschnitt",
+  "Ergebnis:": "Ergebnis:",
+  "Für weitere Informationen bitte die <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" target=\"_blank\">offizielle Webseite des Kantons</a> besuchen.": "Für weitere Informationen bitte die <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" target=\"_blank\">offizielle Webseite des Kantons</a> besuchen.",
+  "bestanden": "Gratuliere, du hast bestanden!",
+  "nichtBestanden": "Leider hast du nicht bestanden.",
+  "Gesamtnote": "Gesamtnote"
 }
