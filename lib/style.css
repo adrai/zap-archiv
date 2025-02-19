@@ -234,7 +234,7 @@ a:hover {
 
 /* Individual table wrapper */
 .notenskala-tables > div {
-  max-width: 300px; /* Prevent the tables from becoming too wide */
+  max-width: 600px; /* Prevent the tables from becoming too wide */
 }
 
 /* Table styling */
@@ -296,14 +296,14 @@ table tr:hover {
   align-items: center;
 }
 
-.notenskala-tables h3::after {
+.notenskala-tables h3.collapsible::after {
   content: "▼"; /* Default arrow icon */
   font-size: 0.8rem;
   margin-left: 10px;
   transition: transform 0.3s ease;
 }
 
-.notenskala-tables h3.open::after {
+.notenskala-tables h3.collapsible.open::after {
   transform: rotate(180deg); /* Rotate arrow when open */
 }
 

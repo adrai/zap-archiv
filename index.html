@@ -70,50 +70,7 @@
             </div>
             <div class="notenskala-tables">
                 <div>
-                    <h3 onclick="toggleTable('table-deutsch')">Deutsch</h3>
-                    <table id="table-deutsch" class="collapsible-table">
-                        <thead>
-                            <tr>
-                                <th>Punkte von</th>
-                                <th>Punkte bis</th>
-                                <th>Note</th>
-                            </tr>
-                        </thead>
-                        <tbody translated>
-                            <tr><td>0</td><td>1</td><td>1</td></tr>
-                            <tr><td>2</td><td>3</td><td>1.25</td></tr>
-                            <tr><td>4</td><td>5</td><td>1.5</td></tr>
-                            <tr><td>6</td><td>7</td><td>1.75</td></tr>
-                            <tr><td>8</td><td>9</td><td>2</td></tr>
-                            <tr><td>10</td><td>11</td><td>2.25</td></tr>
-                            <tr><td>12</td><td>13</td><td>2.5</td></tr>
-                            <tr><td>14</td><td>14</td><td>2.75</td></tr>
-                            <tr><td>15</td><td>16</td><td>3</td></tr>
-                            <tr><td>17</td><td>18</td><td>3.25</td></tr>
-                            <tr><td>19</td><td>20</td><td>3.5</td></tr>
-                            <tr><td>21</td><td>22</td><td>3.75</td></tr>
-                            <tr><td>23</td><td>24</td><td>4</td></tr>
-                            <tr><td>25</td><td>25</td><td>4.25</td></tr>
-                            <tr><td>26</td><td>27</td><td>4.5</td></tr>
-                            <tr><td>28</td><td>29</td><td>4.75</td></tr>
-                            <tr><td>30</td><td>31</td><td>5</td></tr>
-                            <tr><td>32</td><td>33</td><td>5.25</td></tr>
-                            <tr><td>34</td><td>35</td><td>5.5</td></tr>
-                            <tr><td>36</td><td>37</td><td>5.75</td></tr>
-                            <tr><td>38</td><td>46</td><td>6</td></tr>
-                        </tbody>
-                    </table>
-                    <div id="german-calculator" class="calculator">
-                        <h4>Noten-Rechner für Deutsch</h4>
-                        <label for="punkteInput.deutsch">Punkte:</label>
-                        <input type="number" id="punkteInput.deutsch" min="0" max="46" step="1" />
-                        <button onclick="calculateNote('deutsch')">Note berechnen</button>
-                        <hr />
-                        <p class="calculatedNote" id="calculatedNote.deutsch"></p>
-                    </div>
-                </div>
-                <div>
-                    <h3 onclick="toggleTable('table-mathematik')">Mathematik</h3>
+                    <h3 class="collapsible" onclick="toggleTable('table-mathematik')">Mathematik</h3>
                     <table id="table-mathematik" class="collapsible-table">
                         <thead>
                             <tr>
@@ -155,17 +112,72 @@
                         <p class="calculatedNote" id="calculatedNote.mathematik"></p>
                     </div>
                 </div>
+                <div>
+                    <h3 class="collapsible" onclick="toggleTable('table-deutsch')">Deutsch</h3>
+                    <table id="table-deutsch" class="collapsible-table">
+                        <thead>
+                            <tr>
+                                <th>Punkte von</th>
+                                <th>Punkte bis</th>
+                                <th>Note</th>
+                            </tr>
+                        </thead>
+                        <tbody translated>
+                            <tr><td>0</td><td>1</td><td>1</td></tr>
+                            <tr><td>2</td><td>3</td><td>1.25</td></tr>
+                            <tr><td>4</td><td>5</td><td>1.5</td></tr>
+                            <tr><td>6</td><td>7</td><td>1.75</td></tr>
+                            <tr><td>8</td><td>9</td><td>2</td></tr>
+                            <tr><td>10</td><td>11</td><td>2.25</td></tr>
+                            <tr><td>12</td><td>13</td><td>2.5</td></tr>
+                            <tr><td>14</td><td>14</td><td>2.75</td></tr>
+                            <tr><td>15</td><td>16</td><td>3</td></tr>
+                            <tr><td>17</td><td>18</td><td>3.25</td></tr>
+                            <tr><td>19</td><td>20</td><td>3.5</td></tr>
+                            <tr><td>21</td><td>22</td><td>3.75</td></tr>
+                            <tr><td>23</td><td>24</td><td>4</td></tr>
+                            <tr><td>25</td><td>25</td><td>4.25</td></tr>
+                            <tr><td>26</td><td>27</td><td>4.5</td></tr>
+                            <tr><td>28</td><td>29</td><td>4.75</td></tr>
+                            <tr><td>30</td><td>31</td><td>5</td></tr>
+                            <tr><td>32</td><td>33</td><td>5.25</td></tr>
+                            <tr><td>34</td><td>35</td><td>5.5</td></tr>
+                            <tr><td>36</td><td>37</td><td>5.75</td></tr>
+                            <tr><td>38</td><td>46</td><td>6</td></tr>
+                        </tbody>
+                    </table>
+                    <div id="german-calculator" class="calculator">
+                        <h4>Noten-Rechner für Deutsch<span style="font-size: smaller;"><span translated>&nbsp;</span>(Sprachprüfung)</span></h4>
+                        <label for="punkteInput.deutsch">Punkte:</label>
+                        <input type="number" id="punkteInput.deutsch" min="0" max="46" step="1" />
+                        <button onclick="calculateNote('deutsch')">Note berechnen</button>
+                        <hr />
+                        <p class="calculatedNote" id="calculatedNote.deutsch"></p>
+                    </div>
+                    <div id="german-calculator-aufsatz" class="calculator">
+                        <h4>Noten-Rechner für Deutsch<span style="font-size: smaller;"><span translated>&nbsp;</span>(Aufsatz)</span></h4>
+                        <h5 style="margin-top: -5px; font-weight: 100;">beispielhaft anhand<span translated>&nbsp;</span><a href="archiv/beurteilungskriterien_aufsatz.pdf" target="_blank">dieser Beurteilungskriterien</a></h5>
+                        <label for="punkteInput.deutsch-aufsatz">Punkte:</label>
+                        <input type="number" id="punkteInput.deutsch-aufsatz" min="0" max="20" step="1" />
+                        <button onclick="calculateNote('deutsch-aufsatz')">Note berechnen</button>
+                        <hr />
+                        <p class="calculatedNote" id="calculatedNote.deutsch-aufsatz"></p>
+                    </div>
+                </div>
 
-                <div id="general-calculator" class="calculator">
-                    <h4>Generischer Noten-Rechner</h4>
-                    <label for="punkteInput.generell">Punkte:</label>
-                    <input type="number" id="punkteInput.generell" min="0" max="100" step="1" />
-                    <hr />
-                    <label for="punkteInput.generellMax">Maximale Punktzahl:</label>
-                    <input type="number" id="punkteInput.generellMax" min="1" max="100" step="1" placeholder="36" />
-                    <button onclick="calculateNoteGenerell()">Note berechnen</button>
-                    <hr />
-                    <p class="calculatedNote" id="calculatedNote.generell"></p>
+                <div>
+                    <h3>Generischer Noten-Rechner</h3>
+                    <div id="general-calculator" class="calculator">
+                        <label for="punkteInput.generell">Punkte:</label>
+                        <input type="number" id="punkteInput.generell" min="0" max="100" step="1" />
+                        <hr />
+                        <label for="punkteInput.generellMax" translated>Maximale Punktzahl:</label>
+                        <input type="number" id="punkteInput.generellMax" min="1" max="100" step="1" placeholder="36" />
+                        <br />
+                        <button style="margin-top: 5px;" onclick="calculateNoteGenerell()">Note berechnen</button>
+                        <hr />
+                        <p class="calculatedNote" id="calculatedNote.generell"></p>
+                    </div>
                 </div>
             </div>
         </section>
