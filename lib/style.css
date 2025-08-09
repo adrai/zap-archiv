@@ -32,19 +32,42 @@ a:hover {
 
 /* Hero-Bereich */
 .hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #4A90E2, #1D3557);
+  position: relative;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #4A90E2 0%, #1D3557 100%);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(74,144,226,0.08) 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin-top: 24px;
+  margin-bottom: 16px;
 }
 
 .hero p {
@@ -69,19 +92,21 @@ a:hover {
 }
 
 .dwn-btn {
-  background-color: #59ffbd;
+  background: linear-gradient(90deg, #59ffbd 0%, #4A90E2 100%);
   color: white;
-  padding: 12px 20px;
-  border-radius: 5px;
-  font-size: 1rem;
-  display: inline-flex !important;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.12);
+  border: none;
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
 
 .dwn-btn:hover {
-  background-color: #48ffbd;
+  background: linear-gradient(90deg, #48ffbd 0%, #357ABD 100%);
 }
 
 .other-infos-btn {
@@ -113,16 +138,24 @@ a:hover {
 
 .card {
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  border: 1px solid #eaecef;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.07);
+  padding: 28px 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  opacity: 0;
+  animation: fadeInCard 0.7s forwards;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+  }
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.12);
 }
 
 .card h3 {
@@ -246,22 +279,16 @@ table {
 }
 
 table th, table td {
-  border: 1px solid #ddd; /* Borders for table cells */
-  padding: 8px;
-  text-align: center; /* Centers text in cells */
-}
-
-table th {
-  background-color: #4A90E2; /* Header background color */
-  color: white; /* Header text color */
+  font-size: 1.05rem;
+  padding: 10px;
 }
 
 table tr:nth-child(even) {
-  background-color: #f9f9f9; /* Light gray background for alternate rows */
+  background-color: #f6f8fa;
 }
 
 table tr:hover {
-  background-color: #f1f1f1; /* Slightly darker background on hover */
+  background-color: #eaecef;
 }
 
 /* Table titles styling */
@@ -276,6 +303,20 @@ table tr:hover {
   .notenskala-tables {
     flex-direction: column; /* Stacks tables vertically on smaller screens */
     gap: 20px; /* Reduces space between tables */
+  }
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .column {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1.1rem;
   }
 }
 
@@ -324,11 +365,17 @@ footer {
   background: #1D3557;
   color: white;
   text-align: center;
-  padding: 15px 0;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  border-top: 2px solid #4A90E2;
 }
 
 footer a {
   color: #FF7A59;
+}
+
+footer p {
+  margin: 6px 0;
 }
 
 .calculator {
@@ -413,4 +460,50 @@ input {
   padding: 10px;
   background: #e6e6e6;
   border-radius: 5px;
+}
+
+section {
+  box-shadow: 0 2px 12px rgba(44,62,80,0.04);
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 48px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.grid-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.dwn-btn.download-link {
+  background: linear-gradient(90deg, #e3fcec 0%, #4A90E2 100%);
+  color: #357ABD;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 10px 18px;
+  border-radius: 5px;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dwn-btn.download-link i {
+  font-size: 1.1em;
+  color: #4A90E2;
+}
+
+.dwn-btn.download-link:hover {
+  background: linear-gradient(90deg, #c6e6fa 0%, #357ABD 100%);
+  color: #fff;
 }
