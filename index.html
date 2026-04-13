@@ -3,66 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZAP-Archiv mit Prüfungen, Lösungen und Notenrechnern für das Langgymnasium im Kanton Zürich.">
     <title>ZAP-Prüfungen Langgymnasium</title>
     <link rel="icon" type="image/svg+xml" href="img/logo.svg">
-    <link rel="stylesheet" href="lib/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="lib/fontawesome/css/brands.min.css">
-    <link rel="stylesheet" href="lib/fontawesome/css/solid.min.css">
-    <link rel="stylesheet" href="lib/fontawesome/css/regular.min.css">
     <link rel="stylesheet" href="lib/style.css">
-    <script src="lib/jszip.min.js"></script>
-    <script src="lib/i18nextify.min.js" id="i18nextify" fallbacklng="de" supportedlngs="de,en,it,fr" loadpath="locales/{{lng}}/{{ns}}.json" load="languageOnly"></script>
-    <script src="lib/chart.js"></script>
+    <script defer src="lib/jszip.min.js"></script>
+    <script defer src="lib/i18nextify.min.js" id="i18nextify" fallbacklng="de" supportedlngs="de,en,it,fr" loadpath="locales/{{lng}}/{{ns}}.json" load="languageOnly"></script>
+    <script defer src="lib/chart.js"></script>
 </head>
 <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+        <symbol id="icon-arrow-down" viewBox="0 0 24 24">
+            <path d="M12 4v13"></path>
+            <path d="M7 12l5 5 5-5"></path>
+        </symbol>
+        <symbol id="icon-download" viewBox="0 0 24 24">
+            <path d="M12 3v11"></path>
+            <path d="M7 10l5 5 5-5"></path>
+            <path d="M5 19h14"></path>
+        </symbol>
+    </svg>
+
     <header class="hero">
         <div class="hero-content">
-            <img src="img/logo.svg" alt="Logo" style="width: 80px; margin-bottom: 16px;" />
+            <div class="hero-brand">
+                <!-- <p class="hero-eyebrow">Prüfungsarchiv Kanton Zürich</p> -->
+                <img src="img/logo.svg" alt="Logo" class="hero-logo">
+            </div>
             <h1>ZAP-Prüfungen Langgymnasium</h1>
-            <p id="range-years" i18next-key="heading" i18next-options='{"fromYear": "2006", "toYear": "2025"}'>Alle Prüfungen auf einen Blick – von 2006 bis 2025.</p>
-            <a href="#pruefungen" class="cta-btn"><i class="fas fa-arrow-down"></i> <span>Zu den Prüfungen</span></a>
-            <span class="dwn-btn download-link" id="downloadAll"><i class="fas fa-file-download"></i> <span>Alles herunterladen</span></span>
-            <h2 style="color: #EAECEF"><i class="fas fa-graduation-cap"></i> <span id="learn-year" i18next-key="learn" i18next-options='{"year": "2025"}'>Lerne für die Prüfung 2025, indem du die alten Prüfungen durchmachst!</span></h2>
+            <p id="range-years" class="hero-lead" i18next-key="heading" i18next-options='{"fromYear": "2006", "toYear": "2025"}'>Alle Prüfungen auf einen Blick – von 2006 bis 2025.</p>
+            <div class="hero-actions">
+                <a href="#pruefungen" class="cta-btn"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> <span>Zu den Prüfungen</span></a>
+                <button class="dwn-btn" id="downloadAll" type="button">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-download"></use></svg>
+                    <span data-button-label>Alles herunterladen</span>
+                </button>
+            </div>
+            <p id="download-status" class="download-status" role="status" aria-live="polite"></p>
+            <h2 class="hero-subtitle"><span id="learn-year" i18next-key="learn" i18next-options='{"year": "2025"}'>Lerne für die Prüfung 2025, indem du die alten Prüfungen durchmachst!</span></h2>
 
-            <a href="#material-hilfsmittel" class="other-infos-btn"><i class="fas fa-book"></i> <span>Material und Hilfsmittel</span></a>
-            <a href="#beispiel-notenskala" class="other-infos-btn"><i class="fas fa-chart-simple"></i> <span>Beispiel Notenskala</span></a>
-            <a href="#general-calculator" class="other-infos-btn"><i class="fas fa-calculator"></i> <span>Noten-Rechner</span></a>
-            <a href="#gesamtnote" class="other-infos-btn"><i class="fas fa-user-graduate"></i> <span>Gesamtnote</span></a>
+            <nav class="hero-links" aria-label="Schnellzugriff">
+                <a href="#material-hilfsmittel" class="other-infos-btn"><span>Material und Hilfsmittel</span></a>
+                <a href="#beispiel-notenskala" class="other-infos-btn"><span>Beispiel Notenskala</span></a>
+                <a href="#general-calculator" class="other-infos-btn"><span>Noten-Rechner</span></a>
+                <a href="#gesamtnote" class="other-infos-btn"><span>Gesamtnote</span></a>
+            </nav>
         </div>
     </header>
 
     <main>
         <section id="pruefungen" class="grid-container">
             <h2>Prüfungen nach Jahr</h2>
-            <div class="grid" id="pruefungs-grid">
-            </div>
+            <div class="grid" id="pruefungs-grid"></div>
         </section>
 
         <section id="material-hilfsmittel" class="material-section">
             <h2>Material und Hilfsmittel</h2>
-            <p>Kandidatinnen und Kandidaten sollen folgendes Material benutzen:</p>
-        
-            <div class="material-list">
-                <h3>Erlaubt:</h3>
-                <ul>
-                    <li><i class="fas fa-id-card"></i> <span>Amtlicher Ausweis (Pass, Identitätskarte)</span></li>
-                    <li><i class="fas fa-pen"></i> <span>Schreibmaterial: Füllfeder, Kugelschreiber oder Filzstift (Blau/Schwarz), Tipp-Ex oder Tintenkiller</span></li>
-                    <li><i class="fas fa-pencil-ruler"></i> Lineal</li>
-                    <li><i class="fas fa-book"></i> <span>Wörterbuch (für Deutsch: Duden oder Primarschul-Wörterbuch)</span></li>
-                    <li><i class="fas fa-pencil-alt"></i> <span>Mathematik: Bleistift, Radiergummi, Geodreieck und Zirkel</span></li>
-                    <li><i class="fas fa-language"></i> <span>Zweisprachiges Wörterbuch für Mathematik (nur bei Anmeldung vermerkt)</span></li>
-                </ul>
+            <p class="section-intro">Kandidatinnen und Kandidaten sollen folgendes Material benutzen:</p>
+
+            <div class="material-grid">
+                <div class="material-list material-list-allowed">
+                    <h3>Erlaubt:</h3>
+                    <ul>
+                        <li><span>Amtlicher Ausweis (Pass, Identitätskarte)</span></li>
+                        <li><span>Schreibmaterial: Füllfeder, Kugelschreiber oder Filzstift (Blau/Schwarz), Tipp-Ex oder Tintenkiller</span></li>
+                        <li><span>Lineal</span></li>
+                        <li><span>Wörterbuch (für Deutsch: Duden oder Primarschul-Wörterbuch)</span></li>
+                        <li><span>Mathematik: Bleistift, Radiergummi, Geodreieck und Zirkel</span></li>
+                        <li><span>Zweisprachiges Wörterbuch für Mathematik (nur bei Anmeldung vermerkt)</span></li>
+                    </ul>
+                </div>
+
+                <div class="material-list material-list-restricted">
+                    <h3>Nicht erlaubt:</h3>
+                    <ul>
+                        <li><span>Radierbare Stifte (außer Bleistift, wo vorgesehen)</span></li>
+                        <li><span>Eigenes Papier (Papier wird bereitgestellt)</span></li>
+                        <li><span>Digitale Geräte (Mobiltelefone, Smartwatches, etc.)</span></li>
+                    </ul>
+                </div>
             </div>
-        
-            <div class="material-list">
-                <h3>Nicht erlaubt:</h3>
-                <ul>
-                    <li><i class="fas fa-ban"></i> <span>Radierbare Stifte (außer Bleistift, wo vorgesehen)</span></li>
-                    <li><i class="fas fa-file"></i> <span>Eigenes Papier (Papier wird bereitgestellt)</span></li>
-                    <li><i class="fas fa-mobile-alt"></i> <span>Digitale Geräte (Mobiltelefone, Smartwatches, etc.)</span></li>
-                </ul>
-            </div>
-        
+
             <p class="note">Hinweis: Digitale Geräte müssen vor der Prüfung abgegeben werden. Eine analoge Uhr wird zur Zeitanzeige empfohlen.</p>
         </section>
 
@@ -73,71 +94,73 @@
             </div>
             <div class="notenskala-tables">
                 <div>
-                    <h3 class="collapsible" onclick="toggleTable('table-mathematik')">Mathematik</h3>
-                    <table id="table-mathematik" class="collapsible-table">
+                    <h3 class="collapsible">
+                        <button type="button" class="collapsible-toggle" data-toggle="table-mathematik" aria-controls="table-mathematik" aria-expanded="false">Mathematik</button>
+                    </h3>
+                    <table id="table-mathematik" class="collapsible-table" hidden>
                         <thead>
                             <tr>
-                                <th>Punkte von</th>
-                                <th>Punkte bis</th>
-                                <th>Note</th>
+                                <th scope="col">Punkte von</th>
+                                <th scope="col">Punkte bis</th>
+                                <th scope="col">Note</th>
                             </tr>
                         </thead>
-                        <tbody translated id="notenskala-mathematik">
-                        </tbody>
+                        <tbody translated id="notenskala-mathematik"></tbody>
                     </table>
                     <div id="mathematics-calculator" class="calculator">
                         <h4>Noten-Rechner für Mathematik</h4>
-                        <label for="punkteInput.mathematik">Punkte:</label>
-                        <input type="number" id="punkteInput.mathematik" min="0" max="36" step="1" />
-                        <button onclick="calculateNote('mathematik')">Note berechnen</button>
-                        <hr />
-                        <p class="calculatedNote" id="calculatedNote.mathematik"></p>
+                        <label for="points-input-mathematik">Punkte:</label>
+                        <input type="number" id="points-input-mathematik" min="0" max="36" step="1">
+                        <button type="button" data-calculate="mathematik">Note berechnen</button>
+                        <hr>
+                        <p class="calculatedNote" id="calculated-note-mathematik" aria-live="polite"></p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="collapsible" onclick="toggleTable('table-deutsch')">Deutsch</h3>
-                    <table id="table-deutsch" class="collapsible-table">
+                    <h3 class="collapsible">
+                        <button type="button" class="collapsible-toggle" data-toggle="table-deutsch" aria-controls="table-deutsch" aria-expanded="false">Deutsch</button>
+                    </h3>
+                    <table id="table-deutsch" class="collapsible-table" hidden>
                         <thead>
                             <tr>
-                                <th>Punkte von</th>
-                                <th>Punkte bis</th>
-                                <th>Note</th>
+                                <th scope="col">Punkte von</th>
+                                <th scope="col">Punkte bis</th>
+                                <th scope="col">Note</th>
                             </tr>
                         </thead>
-                        <tbody translated id="notenskala-deutsch">
-                        </tbody>
+                        <tbody translated id="notenskala-deutsch"></tbody>
                     </table>
                     <div id="german-calculator" class="calculator">
-                        <h4>Noten-Rechner für Deutsch<span style="font-size: smaller;"><span translated>&nbsp;</span>(Sprachprüfung)</span></h4>
-                        <label for="punkteInput.deutsch">Punkte:</label>
-                        <input type="number" id="punkteInput.deutsch" min="0" max="46" step="1" />
-                        <button onclick="calculateNote('deutsch')">Note berechnen</button>
-                        <hr />
-                        <p class="calculatedNote" id="calculatedNote.deutsch"></p>
+                        <h4>Noten-Rechner für Deutsch <span class="calculator-subtitle"><span translated>&nbsp;</span>(Sprachprüfung)</span></h4>
+                        <label for="points-input-deutsch">Punkte:</label>
+                        <input type="number" id="points-input-deutsch" min="0" max="48" step="1">
+                        <button type="button" data-calculate="deutsch">Note berechnen</button>
+                        <hr>
+                        <p class="calculatedNote" id="calculated-note-deutsch" aria-live="polite"></p>
                     </div>
                     <div id="german-calculator-aufsatz" class="calculator">
-                        <h4>Noten-Rechner für Deutsch<span style="font-size: smaller;"><span translated>&nbsp;</span>(Aufsatz)</span></h4>
-                        <h5 style="margin-top: -5px; font-weight: 100;">beispielhaft anhand<span translated>&nbsp;</span><a href="archiv/beurteilungskriterien_aufsatz.pdf" target="_blank">dieser Beurteilungskriterien</a></h5>
-                        <label for="punkteInput.deutsch-aufsatz">Punkte:</label>
-                        <input type="number" id="punkteInput.deutsch-aufsatz" min="0" max="20" step="1" />
-                        <button onclick="calculateNote('deutsch-aufsatz')">Note berechnen</button>
-                        <hr />
-                        <p class="calculatedNote" id="calculatedNote.deutsch-aufsatz"></p>
+                        <h4>Noten-Rechner für Deutsch <span class="calculator-subtitle"><span translated>&nbsp;</span>(Aufsatz)</span></h4>
+                        <h5 class="calculator-help">beispielhaft anhand<span translated>&nbsp;</span><a href="archiv/beurteilungskriterien_aufsatz.pdf" target="_blank" rel="noopener noreferrer">dieser Beurteilungskriterien</a></h5>
+                        <label for="points-input-deutsch-aufsatz">Punkte:</label>
+                        <input type="number" id="points-input-deutsch-aufsatz" min="0" max="20" step="1">
+                        <button type="button" data-calculate="deutsch-aufsatz">Note berechnen</button>
+                        <hr>
+                        <p class="calculatedNote" id="calculated-note-deutsch-aufsatz" aria-live="polite"></p>
                     </div>
                 </div>
 
                 <div>
                     <h3>Generischer Noten-Rechner</h3>
                     <div id="general-calculator" class="calculator">
-                        <label for="punkteInput.generell">Punkte:</label>
-                        <input type="number" id="punkteInput.generell" min="0" max="100" step="1" />
-                        <hr />
-                        <label for="punkteInput.generellMax" translated>Maximale Punktzahl:</label>
-                        <input type="number" id="punkteInput.generellMax" min="1" max="100" step="1" placeholder="36" translated/>
-                        <br />
-                        <button style="margin-top: 5px;" onclick="calculateNoteGenerell()">Note berechnen</button>
-                        <hr />
-                        <p class="calculatedNote" id="calculatedNote.generell"></p>
+                        <label for="points-input-generell">Punkte:</label>
+                        <input type="number" id="points-input-generell" min="0" max="100" step="1">
+                        <hr>
+                        <label for="points-input-generell-max" translated>Maximale Punktzahl:</label>
+                        <input type="number" id="points-input-generell-max" min="1" max="100" step="1" placeholder="36" translated>
+                        <br>
+                        <button type="button" class="calculator-btn" id="calculateGenerellBtn">Note berechnen</button>
+                        <hr>
+                        <p class="calculatedNote" id="calculated-note-generell" aria-live="polite"></p>
                     </div>
                 </div>
             </div>
@@ -146,61 +169,70 @@
         <section class="gesamtnote" id="gesamtnote">
             <h2>Wie wird die Gesamtnote berechnet?</h2>
 
-            <div class="gesamtnote-container">                
+            <div class="gesamtnote-container">
                 <div class="row">
                     <div class="column">
                         <h3>Mathematik</h3>
                         <div class="input-group"><span translated>M1: </span>Prüfungsnote: <input type="number" id="mathTest" step="0.1" value="4"></div>
                         <div class="input-group"><span translated>M2: </span>Zeugnisnote: <input type="number" id="mathReport" step="0.1" value="5.5"></div>
-                        <p class="arrow"><span translated>⬇️ M3: </span>Durchschnitt <code style="font-size: small;" translated>(M1 + M2) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><span translated>⬇️ M3: </span>Durchschnitt <code class="formula" translated>(M1 + M2) / 2</code><span translated> ⬇️</span></p>
                         <p class="result">Mathematik Durchschnitt: <span id="mathAvg"><span translated>-</span></span></p>
                     </div>
                     <div class="column">
                         <h3>Deutsch</h3>
                         <div class="input-group"><span translated>D1: </span>Aufsatz Note: <input type="number" id="germanEssay" step="0.1" value="4"></div>
                         <div class="input-group"><span translated>D2: </span>Sprachprüfung Note: <input type="number" id="germanTest" step="0.1" value="4"></div>
-                        <p class="arrow"><span translated>⬇️ D3: </span>Durchschnitt <code style="font-size: small;" translated>(D1 + D2) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><span translated>⬇️ D3: </span>Durchschnitt <code class="formula" translated>(D1 + D2) / 2</code><span translated> ⬇️</span></p>
                         <p class="result">Deutsch Prüfungen Durchschnitt: <span id="germanAvgP"><span translated>-</span></span></p>
                         <div class="input-group"><span translated>D4: </span>Zeugnisnote: <input type="number" id="germanReport" step="0.1" value="5.5"></div>
-                        <p class="arrow"><span translated>⬇️ D5: </span>Durchschnitt <code style="font-size: small;" translated>(D3 + D4) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><span translated>⬇️ D5: </span>Durchschnitt <code class="formula" translated>(D3 + D4) / 2</code><span translated> ⬇️</span></p>
                         <p class="result">Deutsch Durchschnitt: <span id="germanAvg"><span translated>-</span></span></p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="column calculator" style="text-align: center;">
-                        <button onclick="calculateGesamtNote()" style=" font-size: larger;">Berechnen</button>
+                    <div class="column calculator calculator-column">
+                        <button type="button" id="calculateGesamtBtn" class="calculator-btn-large">Berechnen</button>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="column" style="text-align: center;">
-                        <p class="arrow"><span translated>⬇️ </span>Entscheidung - Durchschnitt <code style="font-size: small;" translated>(M3 + D5) / 2</code><span translated> ⬇️</span></p>
+                    <div class="column centered-column">
+                        <p class="arrow"><span translated>⬇️ </span>Entscheidung - Durchschnitt <code class="formula" translated>(M3 + D5) / 2</code><span translated> ⬇️</span></p>
                         <p class="result">Prüfungsnote: <span id="finalGrade"><span translated>-</span></span></p>
                         <p class="result">Ergebnis: <span id="result"><span translated>-</span></span></p>
                     </div>
                 </div>
             </div>
 
-            <p merge>Für weitere Informationen bitte die <a href="https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380" target="_blank">offizielle Webseite des Kantons</a> besuchen.</p>
+            <p merge>Für weitere Informationen bitte die <a href="https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380" target="_blank" rel="noopener noreferrer">offizielle Webseite des Kantons</a> besuchen.</p>
         </section>
 
         <section class="info">
             <h2>Hinweise & weitere Informationen</h2>
-            <p style="color: red;">Diese Webseite ist eine private Initiative und nicht offiziell mit dem Kanton Zürich verbunden.</p>
-            <p><i class="fab fa-github"></i> <span merge>Feedback & Inputs können auf <a target="_blank" href="https://github.com/adrai/zap-archiv">Github</a> in Form von Issues eingebracht werden.</span></p>
-            <p merge>Weiterführende Informationen können auf der <a href="https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html" target="_blank">offiziellen Webseite des Kantons</a> gefunden werden.</p>
+            <p class="warning">Diese Webseite ist eine private Initiative und nicht offiziell mit dem Kanton Zürich verbunden.</p>
+            <p class="info-link" merge>Feedback & Inputs können auf <a target="_blank" rel="noopener noreferrer" href="https://github.com/adrai/zap-archiv">Github</a> in Form von Issues eingebracht werden.</p>
+            <p merge>Weiterführende Informationen können auf der <a href="https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html" target="_blank" rel="noopener noreferrer">offiziellen Webseite des Kantons</a> gefunden werden.</p>
         </section>
     </main>
 
     <footer>
         <p>
-            <span>internationalisiert mit</span> <a href="https://i18next.com" translated><img src="img/i18next_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://i18next.com"></a> <span translated>|</span> <span>lokalisiert mit Hilfe von </span><a href="https://locize.com" translated><img src="img/locize_logo.svg" style="max-width: 80px; position: relative; top: 6px;" alt="https://locize.com"></a> <span translated>|</span> <a href="?lng=de" style="display: inline-block;" translated>🇨🇭 Deutsch</a> <a href="?lng=it" style="display: inline-block;" translated>🇮🇹 Italiano</a> <a href="?lng=fr" style="display: inline-block;" translated>🇫🇷 Français</a> <a href="?lng=en" style="display: inline-block;" translated>🏴󠁧󠁢󠁥󠁮󠁧󠁿 English</a>
+            <span>internationalisiert mit</span>
+            <a href="https://i18next.com" translated rel="noopener noreferrer" target="_blank"><img src="img/i18next_logo.svg" class="footer-logo" alt="i18next logo"></a>
+            <span translated>|</span>
+            <span>lokalisiert mit Hilfe von </span>
+            <a href="https://locize.com" translated rel="noopener noreferrer" target="_blank"><img src="img/locize_logo.svg" class="footer-logo" alt="locize logo"></a>
+            <span translated>|</span>
+            <a href="?lng=de" class="language-link" translated>🇨🇭 Deutsch</a>
+            <a href="?lng=it" class="language-link" translated>🇮🇹 Italiano</a>
+            <a href="?lng=fr" class="language-link" translated>🇫🇷 Français</a>
+            <a href="?lng=en" class="language-link" translated>🏴 English</a>
         </p>
 
-        <p style="font-size: 0.8rem;"><span translated>&copy;</span> <span id="footer-year" translated>2025</span> <span translated>|</span> <span merge>Diese Webseite ist auf <a href="https://pages.github.com/" target="_blank">Github Pages</a> gehosted. Informationen zum Datenschutz sind <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">hier</a> zu finden.</span></p>
+        <p class="footer-legal"><span translated>&copy;</span> <span id="footer-year" translated>2025</span> <span translated>|</span> <span merge>Diese Webseite ist auf <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a> gehosted. Informationen zum Datenschutz sind <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">hier</a> zu finden.</span></p>
     </footer>
 
-    <script src="lib/main.js"></script>
+    <script defer src="lib/main.js"></script>
 </body>
 </html>
