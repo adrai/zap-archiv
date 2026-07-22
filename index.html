@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ZAP-Archiv mit Prüfungen, Lösungen und Notenrechnern für das Langgymnasium im Kanton Zürich.">
+    <meta name="theme-color" content="#1D3557">
+    <link rel="canonical" href="https://adrai.github.io/zap-archiv/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ZAP-Prüfungen Langgymnasium">
+    <meta property="og:description" content="Alle ZAP-Prüfungen des Langgymnasiums im Kanton Zürich – mit Lösungen und Notenrechnern, von 2006 bis heute.">
+    <meta property="og:url" content="https://adrai.github.io/zap-archiv/">
+    <meta property="og:image" content="https://adrai.github.io/zap-archiv/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <title>ZAP-Prüfungen Langgymnasium</title>
     <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <script>
+        (function() {
+            var stored;
+            try { stored = localStorage.getItem('theme'); } catch (e) {}
+            var dark = stored ? stored === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        })();
+    </script>
     <link rel="stylesheet" href="lib/style.css">
     <script defer src="lib/jszip.min.js"></script>
     <script defer src="lib/i18nextify.min.js" id="i18nextify" fallbacklng="de" supportedlngs="de,en,it,fr" loadpath="locales/{{lng}}/{{ns}}.json" load="languageOnly"></script>
@@ -22,9 +40,27 @@
             <path d="M7 10l5 5 5-5"></path>
             <path d="M5 19h14"></path>
         </symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+        </symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="M4.9 4.9l1.4 1.4"></path>
+            <path d="M17.7 17.7l1.4 1.4"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="M4.9 19.1l1.4-1.4"></path>
+            <path d="M17.7 6.3l1.4-1.4"></path>
+        </symbol>
     </svg>
 
     <header class="hero">
+        <button type="button" id="themeToggle" class="theme-toggle" aria-label="Farbschema wechseln">
+            <svg class="icon icon-moon" aria-hidden="true"><use href="#icon-moon"></use></svg>
+            <svg class="icon icon-sun" aria-hidden="true"><use href="#icon-sun"></use></svg>
+        </button>
         <div class="hero-content">
             <div class="hero-brand">
                 <!-- <p class="hero-eyebrow">Prüfungsarchiv Kanton Zürich</p> -->
@@ -175,17 +211,17 @@
                         <h3>Mathematik</h3>
                         <div class="input-group"><span translated>M1: </span>Prüfungsnote: <input type="number" id="mathTest" step="0.1" value="4"></div>
                         <div class="input-group"><span translated>M2: </span>Zeugnisnote: <input type="number" id="mathReport" step="0.1" value="5.5"></div>
-                        <p class="arrow"><span translated>⬇️ M3: </span>Durchschnitt <code class="formula" translated>(M1 + M2) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> <span translated>M3: </span>Durchschnitt <code class="formula" translated>(M1 + M2) / 2</code> <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></p>
                         <p class="result">Mathematik Durchschnitt: <span id="mathAvg"><span translated>-</span></span></p>
                     </div>
                     <div class="column">
                         <h3>Deutsch</h3>
                         <div class="input-group"><span translated>D1: </span>Aufsatz Note: <input type="number" id="germanEssay" step="0.1" value="4"></div>
                         <div class="input-group"><span translated>D2: </span>Sprachprüfung Note: <input type="number" id="germanTest" step="0.1" value="4"></div>
-                        <p class="arrow"><span translated>⬇️ D3: </span>Durchschnitt <code class="formula" translated>(D1 + D2) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> <span translated>D3: </span>Durchschnitt <code class="formula" translated>(D1 + D2) / 2</code> <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></p>
                         <p class="result">Deutsch Prüfungen Durchschnitt: <span id="germanAvgP"><span translated>-</span></span></p>
                         <div class="input-group"><span translated>D4: </span>Zeugnisnote: <input type="number" id="germanReport" step="0.1" value="5.5"></div>
-                        <p class="arrow"><span translated>⬇️ D5: </span>Durchschnitt <code class="formula" translated>(D3 + D4) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> <span translated>D5: </span>Durchschnitt <code class="formula" translated>(D3 + D4) / 2</code> <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></p>
                         <p class="result">Deutsch Durchschnitt: <span id="germanAvg"><span translated>-</span></span></p>
                     </div>
                 </div>
@@ -198,7 +234,7 @@
 
                 <div class="row">
                     <div class="column centered-column">
-                        <p class="arrow"><span translated>⬇️ </span>Entscheidung - Durchschnitt <code class="formula" translated>(M3 + D5) / 2</code><span translated> ⬇️</span></p>
+                        <p class="arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> <span translated>Entscheidung - Durchschnitt </span><code class="formula" translated>(M3 + D5) / 2</code> <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></p>
                         <p class="result">Prüfungsnote: <span id="finalGrade"><span translated>-</span></span></p>
                         <p class="result">Ergebnis: <span id="result"><span translated>-</span></span></p>
                     </div>
@@ -219,19 +255,23 @@
     <footer>
         <p>
             <span>internationalisiert mit</span>
-            <a href="https://i18next.com" translated rel="noopener noreferrer" target="_blank"><img src="img/i18next_logo.svg" class="footer-logo" alt="i18next logo"></a>
+            <a href="https://www.i18next.com" translated rel="noopener noreferrer" target="_blank"><img src="img/i18next_logo.svg" class="footer-logo" alt="i18next logo"></a>
             <span translated>|</span>
             <span>lokalisiert mit Hilfe von </span>
-            <a href="https://locize.com" translated rel="noopener noreferrer" target="_blank"><img src="img/locize_logo.svg" class="footer-logo" alt="locize logo"></a>
+            <a href="https://www.locize.com" translated rel="noopener noreferrer" target="_blank"><img src="img/locize_logo.svg" class="footer-logo" alt="locize logo"></a>
             <span translated>|</span>
             <a href="?lng=de" class="language-link" translated>🇨🇭 Deutsch</a>
             <a href="?lng=it" class="language-link" translated>🇮🇹 Italiano</a>
             <a href="?lng=fr" class="language-link" translated>🇫🇷 Français</a>
-            <a href="?lng=en" class="language-link" translated>🏴 English</a>
+            <a href="?lng=en" class="language-link" translated>🇬🇧 English</a>
         </p>
 
         <p class="footer-legal"><span translated>&copy;</span> <span id="footer-year" translated>2026</span> <span translated>|</span> <span merge>Diese Webseite ist auf <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Github Pages</a> gehosted. Informationen zum Datenschutz sind <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">hier</a> zu finden.</span></p>
     </footer>
+
+    <button type="button" id="toTop" class="to-top" aria-label="Nach oben">
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg>
+    </button>
 
     <script defer src="lib/main.js"></script>
 </body>

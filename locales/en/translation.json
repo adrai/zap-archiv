@@ -73,5 +73,7 @@
   "Für weitere Informationen bitte die <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" rel=\"noopener noreferrer\" target=\"_blank\">offizielle Webseite des Kantons</a> besuchen.": "For more information, please visit <a draggable=\"true\" href=\"https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung/pruefung-fuer-das-langgymnasium.html#451235380\" rel=\"noopener noreferrer\" target=\"_blank\">Official website of the canton</a>.",
   "bestanden": "Congratulations, you passed!",
   "nichtBestanden": "Unfortunately you did not pass.",
-  "Gesamtnote": "Overall grade"
+  "Gesamtnote": "Overall grade",
+  "Neu": "New",
+  "Farbschema wechseln": "Toggle color scheme"
 }
