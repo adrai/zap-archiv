@@ -91,6 +91,16 @@
         <section id="pruefungen" class="grid-container">
             <h2>Prüfungen nach Jahr</h2>
             <div class="grid" id="pruefungs-grid"></div>
+            <aside class="notice" aria-labelledby="notice-2027">
+                <h3 id="notice-2027">Neu ab der Prüfung 2027: angepasste Anforderungen in Deutsch</h3>
+                <ul>
+                    <li><strong>Aufsatz:</strong> nur noch die Textsorten Erzählung und Bericht (kein Brief, keine Beschreibung mehr). Neu gehört auch dazu, Meinungen zu äussern und zu begründen.</li>
+                    <li><strong>Sprachprüfung:</strong> neu wird die Sandwichprobe verlangt. Ersatz-, Verschiebe-, Erweiterungs- und Weglassprobe gehören nicht mehr zu den Anforderungen.</li>
+                    <li><strong>Mathematik:</strong> unverändert.</li>
+                </ul>
+                <p>Die alten Prüfungen bleiben die beste Übung. Aufsatzthemen mit Brief oder Beschreibung und Aufgaben zu den weggefallenen Proben kannst du einfach überspringen.</p>
+                <a href="archiv/pruefungsanforderungen_lg_2027.pdf" target="_blank" rel="noopener noreferrer">Prüfungsanforderungen 2027 (PDF)</a>
+            </aside>
         </section>
 
         <section id="material-hilfsmittel" class="material-section">
@@ -102,10 +112,11 @@
                     <h3>Erlaubt:</h3>
                     <ul>
                         <li><span>Amtlicher Ausweis (Pass, Identitätskarte)</span></li>
-                        <li><span>Schreibmaterial: Füllfeder, Kugelschreiber oder Filzstift (Blau/Schwarz), Tipp-Ex oder Tintenkiller</span></li>
+                        <li><span>Schreibmaterial: Füllfeder, Kugelschreiber oder Filzstift (Blau/Schwarz), Tipp-Ex oder Korrekturroller</span></li>
+                        <li><span>Leuchtstift (nur zum Markieren – Markierungen zählen nicht als Lösung)</span></li>
                         <li><span>Lineal</span></li>
                         <li><span>Wörterbuch (für Deutsch: Duden oder Primarschul-Wörterbuch)</span></li>
-                        <li><span>Mathematik: Bleistift, Radiergummi, Geodreieck und Zirkel</span></li>
+                        <li><span>Mathematik: Geodreieck und Zirkel, Bleistift und Radiergummi (nur für Geometrieaufgaben, wenn verlangt)</span></li>
                         <li><span>Zweisprachiges Wörterbuch für Mathematik (nur bei Anmeldung vermerkt)</span></li>
                     </ul>
                 </div>
@@ -113,9 +124,11 @@
                 <div class="material-list material-list-restricted">
                     <h3>Nicht erlaubt:</h3>
                     <ul>
-                        <li><span>Radierbare Stifte (außer Bleistift, wo vorgesehen)</span></li>
+                        <li><span>Radierbare Stifte (ausser Bleistift, wo vorgesehen)</span></li>
+                        <li><span>Notizen oder Beilagen im Wörterbuch</span></li>
                         <li><span>Eigenes Papier (Papier wird bereitgestellt)</span></li>
-                        <li><span>Digitale Geräte (Mobiltelefone, Smartwatches, etc.)</span></li>
+                        <li><span>Digitale Geräte (Mobiltelefone, Smartwatches, Smart Glasses usw.)</span></li>
+                        <li><span>Eigene Gehörschutzstöpsel (werden bei Bedarf von der Schule gestellt)</span></li>
                     </ul>
                 </div>
             </div>
@@ -191,7 +204,7 @@
                         <label for="points-input-generell">Punkte:</label>
                         <input type="number" id="points-input-generell" min="0" max="100" step="1">
                         <hr>
-                        <label for="points-input-generell-max" translated>Maximale Punktzahl:</label>
+                        <label for="points-input-generell-max">Maximale Punktzahl:</label>
                         <input type="number" id="points-input-generell-max" min="1" max="100" step="1" placeholder="36" translated>
                         <br>
                         <button type="button" class="calculator-btn" id="calculateGenerellBtn">Note berechnen</button>
@@ -234,7 +247,7 @@
 
                 <div class="row">
                     <div class="column centered-column">
-                        <p class="arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> <span translated>Entscheidung - Durchschnitt </span><code class="formula" translated>(M3 + D5) / 2</code> <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></p>
+                        <p class="arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg> Entscheidung - Durchschnitt <code class="formula" translated>(M3 + D5) / 2</code> <svg class="icon" aria-hidden="true"><use href="#icon-arrow-down"></use></svg></p>
                         <p class="result">Prüfungsnote: <span id="finalGrade"><span translated>-</span></span></p>
                         <p class="result">Ergebnis: <span id="result"><span translated>-</span></span></p>
                     </div>
